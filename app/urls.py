@@ -7,4 +7,5 @@ urlpatterns = [
     path('', include('brokers.urls')),
     path('', include('categories.urls')),
     path('', include('investiments.urls')),
+    path('', include('outflows.urls')),
 ]

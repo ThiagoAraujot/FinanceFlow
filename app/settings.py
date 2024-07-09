@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'brokers',
     'categories',
     'investiments',
+    'outflows',
 ]
 
 MIDDLEWARE = [
