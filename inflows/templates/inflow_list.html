@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %} FinanceFlow - Gastos {% endblock %}
+{% block title %} FinanceFlow - Rendas {% endblock %}
 
 {% block content %}
 
 <div class="row mb-3">
   <div class="col-md-6">
-    <form method="get" action="{% url 'outflow_list'%}">
+    <form method="get" action="{% url 'inflow_list'%}">
       <div class="input-group">
         <input type="text" class="form-control" name="title" placeholder="Nome" value="{{ request.GET.title }}">
         <button type="submit" class="btn btn-primary">
@@ -17,8 +17,8 @@
   </div>
 
   <div class="col-md-6">
-    <a href="{% url 'outflow_create'%}" class="btn btn-success float-end">
-      <i class="bi bi-plus"></i> Cadastrar Gasto
+    <a href="{% url 'inflow_create'%}" class="btn btn-success float-end">
+      <i class="bi bi-plus"></i> Cadastrar Renda
     </a>
   </div>
 </div>
@@ -37,20 +37,20 @@
       </tr>
     </thead>
     <tbody>
-      {% for outflow in outflows %}
+      {% for inflow in inflows %}
         <tr>
-          <td>{{ outflow.id }}</td>
-          <td>{{ outflow.title }}</td>
-          <td>R$ {{ outflow.amount }}</td>
-          <td>{{ outflow.category }}</td>
-          <td>{{ outflow.description }}</td>
-          <td>{{ outflow.created_at }}</td>
+          <td>{{ inflow.id }}</td>
+          <td>{{ inflow.title }}</td>
+          <td>R$ {{ inflow.amount }}</td>
+          <td>{{ inflow.category }}</td>
+          <td>{{ inflow.description }}</td>
+          <td>{{ inflow.created_at }}</td>
           <td>
-            <a href="{% url 'outflow_update' outflow.id %}" class="btn btn-warning btn-sm">
+            <a href="{% url 'inflow_update' inflow.id %}" class="btn btn-warning btn-sm">
               <i class="bi bi-pencil"></i>
             </a>
 
-            <a href="{% url 'outflow_delete' outflow.id %}" class="btn btn-danger btn-sm">
+            <a href="{% url 'inflow_delete' inflow.id %}" class="btn btn-danger btn-sm">
               <i class="bi bi-trash"></i>
             </a>
           </td>
