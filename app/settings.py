@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     'brokers',
     'categories',
+    'investiments',
 ]
 
 MIDDLEWARE = [
